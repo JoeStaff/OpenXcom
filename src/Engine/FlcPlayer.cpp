@@ -245,6 +245,7 @@ void FlcPlayer::SDLPolling()
 		switch (event.type)
 		{
 		case SDL_MOUSEBUTTONDOWN:
+		case SDL_JOYBUTTONDOWN:
 		case SDL_KEYDOWN:
 			_playingState = SKIPPED;
 			break;

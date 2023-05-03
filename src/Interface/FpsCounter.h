@@ -54,6 +54,8 @@ public:
 	/// Draws the FPS counter.
 	void draw();
 	void addFrame();
+	/// Returns FPS as integer
+	int getFPS();
 };
 
 }

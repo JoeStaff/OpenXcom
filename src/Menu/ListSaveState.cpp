@@ -27,6 +27,9 @@
 #include "../Interface/TextEdit.h"
 #include "../Interface/TextButton.h"
 #include "SaveGameState.h"
+#ifdef GAMEPAD_ENABLED
+#include "../Engine/Controller.h"
+#endif
 
 namespace OpenXcom
 {
@@ -128,6 +131,9 @@ void ListSaveState::lstSavesPress(Action *action)
 		{
 			_edtSave->setText(_selected);
 		}
+		#ifdef GAMEPAD_ENABLED
+		_edtSave->setText(Controller::TextEditPressed("Save Name"));
+		#endif
 		_edtSave->setX(_lstSaves->getColumnX(0));
 		_edtSave->setY(_lstSaves->getRowY(_selectedRow));
 		_edtSave->setVisible(true);

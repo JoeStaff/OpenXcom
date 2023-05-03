@@ -1065,7 +1065,7 @@ void stackTrace(void *ctx)
 #endif
 #elif __CYGWIN__
 	Log(LOG_FATAL) << "Unfortunately, no stack trace information is available";
-#else
+#elif !defined NO_STACK_TRACE
 	void *frames[32];
 	char buf[1024];
 	int  frame_count = backtrace(frames, 32);

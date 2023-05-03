@@ -108,6 +108,13 @@ void FpsCounter::update()
 }
 
 /**
+ * Returns FPS as integer
+ */
+ int FpsCounter::getFPS() {
+	return (int)floor((double)_frames / _timer->getTime() * 1000);
+ }
+ 
+/**
  * Draws the FPS counter.
  */
 void FpsCounter::draw()

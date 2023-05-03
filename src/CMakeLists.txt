@@ -104,6 +104,7 @@ set ( engine_src
   Engine/Adlib/fmopl.cpp
   Engine/AdlibMusic.cpp
   Engine/CatFile.cpp
+  Engine/Controller.cpp
   Engine/CrossPlatform.cpp
   Engine/FastLineClip.cpp
   Engine/FileMap.cpp

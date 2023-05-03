@@ -28,6 +28,9 @@
 #include "../Savegame/Base.h"
 #include "../Basescape/PlaceLiftState.h"
 #include "../Engine/Options.h"
+#ifdef GAMEPAD_ENABLED
+#include "../Engine/Controller.h"
+#endif
 
 namespace OpenXcom
 {
@@ -79,6 +82,7 @@ BaseNameState::BaseNameState(Base *base, Globe *globe, bool first) : _base(base)
 	_edtName->setBig();
 	_edtName->setFocus(true, false);
 	_edtName->onChange((ActionHandler)&BaseNameState::edtNameChange);
+	_edtName->onMouseClick((ActionHandler)&BaseNameState::edtNameChange);
 }
 
 /**
@@ -96,6 +100,9 @@ BaseNameState::~BaseNameState()
  */
 void BaseNameState::edtNameChange(Action *action)
 {
+	#ifdef GAMEPAD_ENABLED
+	_edtName->setText(Controller::TextEditPressed("Base Name"));
+	#endif
 	_base->setName(_edtName->getText());
 	if (action->getDetails()->key.keysym.sym == SDLK_RETURN ||
 		action->getDetails()->key.keysym.sym == SDLK_KP_ENTER)
@@ -105,10 +112,7 @@ void BaseNameState::edtNameChange(Action *action)
 			btnOkClick(action);
 		}
 	}
-	else
-	{
-		_btnOk->setVisible(!_edtName->getText().empty());
-	}
+	_btnOk->setVisible(!_edtName->getText().empty());
 }
 
 /**

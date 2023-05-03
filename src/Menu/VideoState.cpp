@@ -514,7 +514,7 @@ void VideoState::init()
 		for (int i = FADE_STEPS; i > 0; --i)
 		{
 			SDL_Event event;
-			if (SDL_PollEvent(&event) && event.type == SDL_KEYDOWN) break;
+			if (SDL_PollEvent(&event) && event.type == SDL_KEYDOWN || event.type == SDL_JOYBUTTONDOWN) break;
 			for (int color = 0; color < 256; ++color)
 			{
 				pal2[color].r = (((int)pal[color].r) * i) / 20;

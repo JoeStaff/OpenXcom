@@ -380,6 +380,9 @@
     <ClCompile Include="Engine\CrossPlatform.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
+    <ClCompile Include="Engine\Controller.cpp">
+      <Filter>Engine</Filter>
+    </ClCompile>
     <ClCompile Include="Engine\ModInfo.cpp">
       <Filter>Engine</Filter>
     </ClCompile>
