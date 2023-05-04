@@ -1,4 +1,4 @@
-OpenXcom (X-COM: Enemy Unknown/UFO Defense and X-COM: Terror from the Deep Port) for GarlicOS
+OpenXcom (X-COM: UFO Defense and X-COM: Terror from the Deep Port) for GarlicOS
 ============================================
 
 Installation
